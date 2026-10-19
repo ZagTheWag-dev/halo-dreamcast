@@ -20,6 +20,45 @@ Screenshots taken in the Flycast emulator.
 > The build converts the maps from your own disc image.
 > A disc image you build contains converted game data: keep it to yourself.
 
+## About this project
+
+This is early development.
+Everything here was built in three days: development started on October 17, 2026, and this first public release went up on October 19, 2026.
+
+- **Day 1:**
+  - the Dreamcast toolchain
+  - Halo's game code compiling and booting on KallistiOS
+  - Blood Gulch loading from a disc
+  - then the renderer, controls, HUD, 30 fps pacing, effects, sound and a title menu
+- **Day 2:**
+  - Halo's boot intro and Halo's real Xbox menus
+  - the first runs on a real Dreamcast, and the fixes they called for
+- **Day 3:**
+  - the weapons' displays (the assault rifle's counter, the plasma gauges)
+  - Halo's sky and haze, terrain and cliff detail, water, glowing lights
+  - the campaign level "Halo"
+
+I meant to keep working on it privately for longer.
+Then I saw a gameplay video of another attempt to bring Halo to the Dreamcast.
+That project is closed source, and I think this one is already further along.
+So I decided to release mine early and in the open, so anyone can build it, learn from it and improve it.
+
+# *Vibe code is shared code! Leave your sources open!*
+
+### On real hardware
+
+This isn't just an emulator demo: it was run on a real Sega Dreamcast from a **GDEMU** (an SD card in place of the disc drive).
+To play the disc you build on yours:
+
+1. Copy `halo.cdi` to the GDEMU's SD card, in a numbered folder of its own (for example `42\disc.cdi`).
+2. Add it to your menu (GDMENU).
+3. Boot it like any other game.
+
+Real hardware is stricter than an emulator.
+The first runs on the console found a frozen picture that Flycast never showed: the PowerVR's vertex buffer was overflowing. That was fixed the same day.
+The Dreamcast's processor also faults on unaligned memory access, which the port now emulates the way the Xbox's x86 would have behaved.
+The builds since then are developed in Flycast first, and still need fresh testing on a console.
+
 ## What works
 
 - **Halo's own menus**, the Xbox's shell running on the Dreamcast:
@@ -44,7 +83,7 @@ Screenshots taken in the Flycast emulator.
   - soft shadows, particles and explosions
 - **30 fps**, paced by the display. Draw and game time are measured on screen and over the serial port.
 
-Developed and tested in Flycast. Earlier builds ran on a real Dreamcast from a GDEMU; the latest builds are not yet tested on hardware.
+Developed in Flycast and run on a real Dreamcast from a GDEMU (see "On real hardware" above).
 
 ## Building
 
