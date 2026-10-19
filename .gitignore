@@ -1,0 +1,10 @@
+ref/
+OpenCE-build-101/
+build/
+assets/
+*.cdi
+*.iso
+*.elf
+engine/build/
+sdcard/
+media/

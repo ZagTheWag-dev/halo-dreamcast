@@ -1,0 +1,26 @@
+{
+  "comment": "Dreamcast build inputs (tools/dc_build.py), on top of port/n64/port.json. See port/dc/README.md.",
+  "defines": [],
+  "exclude_sources": [],
+  "exclude_game_glue": [],
+  "source_flags": {
+    "source/physics/breakable_surfaces.c": "-std=gnu11 -fgnu89-inline"
+  },
+  "include_sources": [
+    "source/interface/ui_widget.c",
+    "source/interface/ui_widget_group.c",
+    "source/interface/ui_widget_text_search_and_replace_functions.c",
+    "source/interface/ui_widget_event_handler_functions.c",
+    "source/interface/ui_widget_game_data_input_functions.c",
+    "source/interface/attract_mode.c",
+    "source/interface/progress_bar.c",
+    "source/interface/virtual_keyboard.c",
+    "source/saved games/player_profile.c",
+    "source/saved games/playlist_profile.c",
+    "source/saved games/saved_game_files.c",
+    "source/networking/network_game_ui.c"
+  ],
+  "weaken_sources": [
+    "port/n64/game/n64_stubs_generated.c"
+  ]
+}
